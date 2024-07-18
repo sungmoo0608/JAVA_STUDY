@@ -5,7 +5,8 @@ public class OperEx2 {
 		short a,b;
 		a = b = 10;
 		
-		short c = a + b;
+		// 오류 발생 short c = a + b;
+		int c = a + b;
 		System.out.println("c의 값 : " + c);
 
 	}
