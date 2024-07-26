@@ -43,7 +43,7 @@ class MyClass3{
         System.out.println(myClassStr);
     }
 }
-public class TestClass {
+public class TestClass2 {
     public static void main(String[] args) {
         MyClass1 mc1 = new MyClass1();
         MyClass2 mc2 = new MyClass2();
