@@ -19,7 +19,7 @@ class Circle1 implements Shape{
 	
 	@Override
 	public void draw() {
-		String circle;
+		System.out.println("원 그리기");
 	}
 	
 	@Override

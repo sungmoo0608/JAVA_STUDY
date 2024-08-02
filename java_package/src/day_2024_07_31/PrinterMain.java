@@ -35,7 +35,7 @@ public class PrinterMain {
 		//단순줄바꿈
 		System.out.println();
 
-		//삼성 프린터로 출력
+		//LG 프린터로 출력
 		prn = new LprinterDriver();
 		prn.print(myDoc);
 	}
