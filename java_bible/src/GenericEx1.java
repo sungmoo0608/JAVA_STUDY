@@ -12,5 +12,5 @@ class GenericEx1<T> {
 		for(T s : v)
 		out.println(s);
 	}
-
+	
 }
