@@ -31,7 +31,7 @@
 		for(i=1; i<=9; i++){
 			out.println("<h2>"+i+"단</h2>");
 			for(j=1; j<=9; j++){
-				out.print(j + "*" + i + "=" + j*i + "<br>" );
+				out.print(i + "*" + j + "=" + j*i + "<br>" );
 			}
 			out.print("<br>" );
 		}
@@ -51,13 +51,49 @@
 			for(i=1; i<=9; i++){ 
 				out.print("<tr>");
 					for(j=1; j<=9; j++){
-						out.print("<td>" + j + "*" + i + "=" + j*i + "</td>"); 				
+						out.print("<td>" + j + " * " + i + " = " + j*i + "</td>"); 				
 					} 
 				out.print("</tr>");
 			}
 		%>
 	</table>
-
+	
+	<hr>
+	<h1>구구단 가로 테이블 출력 - 쌤 버전 1</h1>
+	<table border="1">
+	<%
+		for(i=1; i<=9; i++){
+			out.print("<tr>");
+			for(j=1; j<=9; j++){
+				out.print("<td>" + i + "*" + j + " = " + i*j + "</td>");
+			}
+			out.print("</tr>");
+		}
+	%>
+	</table>
+	
+	
+	<hr>
+	<h1>구구단 가로 테이블 출력 - 쌤 버전 2</h1>
+	<table border="1">
+	<% 
+		out.print("<tr>");
+			for(i=1;i<=9;i++){ 
+				out.print("<td>" + i + "단" + "</td>" );
+			} 
+		out.print("</tr>");
+	%>	
+	<%
+		for(i=1; i<=9; i++){
+			out.print("<tr>");
+			for(j=1; j<=9; j++){
+				out.print("<td>" + j + "*" + i + " = " + i*j + "</td>");
+			}
+			out.print("</tr>");
+		}
+	%>
+	</table>
+	
 	<h1>안녕하세요</h1>
 
 </body>

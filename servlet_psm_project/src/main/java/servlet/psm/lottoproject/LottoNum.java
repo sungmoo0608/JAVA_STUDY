@@ -1,4 +1,4 @@
-package edu.lotto.java;
+package servlet.psm.lottoproject;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,11 +12,6 @@ public class LottoNum {
 		while(lottoSet.size() < LOTTO ) {
 			int num = (int)((Math.random()*45)+1);
 			lottoSet.add(num);
-			
-		}System.out.println(lottoSet);
-		
-		
-
+		}
 	}
-
 }
