@@ -1,3 +1,5 @@
+<%@page import="edu.ict.layout.Lotto"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,56 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script>
-    function Lotto(){
-       this.count = 7;
-       this.nums = new Array();
-       this.bonusNum = 0;
-       this.getNums = function(){
-          let set = new Set();  
-
-           while(set.size < this.count){
-            set.add( parseInt(Math.random()*45) + 1 )
-           }
-
-           this.nums = Array.from(set); // set을 배열로...
-           this.bonusNum = this.nums[this.nums.length - 1]; //7번째 숫자를 보너스 넘으로
-           this.nums.pop(); //마지막 요소 제거
-
-           return this.nums;
-       }
-       this.getColor = function(num){
-        let color ="black";
-         if(num < 10){
-           color = "orange";
-         }else if(num < 20){
-           color = "purple";
-         }else if(num < 30){
-           color = "purple";
-         }else if(num < 40){
-           color = "blue";
-         }
-         return color;
-       }
-    }
-
-    $(document).ready(function(){
-      let lotto = new Lotto();
-     
-      for(let num of lotto.getNums()){
-        let ball = $("#ball-row > div:first-child").clone();
-        ball.find("rect").attr("fill",lotto.getColor(num));
-        ball.find("text").text(num);
-        $("#ball-row").append(ball);
-      }
-      $("#ball-row > div:first-child").remove();
-     
-      $("#svg-rect").attr("fill",lotto.getColor(lotto.bonusNum));
-      $("#svg-text").text(lotto.bonusNum);
-     
-    });
-  </script>
-
 </head>
 <body class="d-flex flex-column justify-content-between vh-100">
   <header >
@@ -89,32 +41,27 @@
   <main>
     <div class="container">
       <div id="ball-row" class="row">    
+      		<%
+      		
+      			Lotto lotto = new Lotto();
+      		
+      			for(int num : lotto.getLottoSet()){
+      				System.out.println(num);
+      		
+      		%>
        
             <div class="col-lg-2 mt-3 d-flex justify-content-center">
               <svg class="rounded-circle" width="140" height="140" focusable="false">
-                <rect width="100%" height="100%" fill="black"/>
-                <text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60"></text>
+                <rect width="100%" height="100%" fill="<%=lotto.getColor(num) %>"/>
+                <text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60"><%=num %></text>
               </svg>
             </div>
+            
+            <% 
+            	}
+            %>
 
       </div>
-      <div class="row">
-      <div class="col-lg-12 mt-3 d-flex justify-content-center">
-              <svg class="rounded-circle" width="140" height="140" focusable="false">
-                <rect width="100%" height="100%" fill="white"/>
-                <text text-anchor="middle" x="50%" y="50%" fill="black" dy=".3em" font-size="60">+</text>
-              </svg>
-         </div>      
-      </div>
-      <div class="row">
-      <div class="col-lg-12 mt-3 d-flex justify-content-center">
-              <svg class="rounded-circle" width="140" height="140" focusable="false">
-                <rect id="svg-rect" width="100%" height="100%" fill="black"/>
-                <text id="svg-text" text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60"></text>
-              </svg>
-         </div>      
-      </div>
-     
     </div>
   </main>
   <footer class="text-center">

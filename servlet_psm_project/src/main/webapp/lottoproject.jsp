@@ -1,5 +1,6 @@
 
-<%@page import="servlet.psm.lottoproject.LottoNum"%>
+<%@page import="servlet.psm.project.LottoNum"%>
+<%@page import="java.util.Arrays"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
@@ -45,36 +46,25 @@
 
 		<div id="ball-row" class="row">
 			<%
-				LottoNum lotto = new LottoNum();
+      		
+      			LottoNum lotto = new LottoNum();
+      		
+      			for(int num : lotto.getLottoSet()){
+      				System.out.println(num);
+      		
+      		%>
 			
-				lotto.num[i];
-			%>
     		<div class="col-lg-2 mt-3 d-flex justify-content-center"> 
 					<svg class="rounded-circle" width="140" height="140" focusable="false">
-					<rect width="100%" height="100%" fill="black"/>
-	    			<text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60">		
+					<rect width="100%" height="100%" fill="<%=lotto.getColor(num) %>"/>
+	    			<text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60">
+	    			<%=num %>		
 	    			</text>
 		           </svg> 
     		</div>
-    	
+    		<% } %>
+    		
     	</div>
-
-      <div class="row">
-      <div class="col-lg-12 mt-3 d-flex justify-content-center">
-              <svg class="rounded-circle" width="140" height="140" focusable="false">
-                <rect width="100%" height="100%" fill="white"/>
-                <text text-anchor="middle" x="50%" y="50%" fill="black" dy=".3em" font-size="60">+</text>
-              </svg>
-         </div>      
-      </div>
-      <div class="row">
-      <div class="col-lg-12 mt-3 d-flex justify-content-center">
-              <svg class="rounded-circle" width="140" height="140" focusable="false">
-                <rect id="svg-rect" width="100%" height="100%" fill="black"/>
-                <text id="svg-text" text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60"></text>
-              </svg>
-         </div>      
-      </div>
      
     </div>
   </main>
