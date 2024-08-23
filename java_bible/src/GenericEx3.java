@@ -17,7 +17,7 @@ public class GenericEx3<T> {
 
 	public static void main(String[] args) {
 		GenericEx3<?> g3 = new GenericEx3<String>();
-		g3.set("String객체");	//오류
+		//오류 g3.set("String객체");	
 		String s = (String)g3.get();
 		out.println("g3의 결과 : "+ s);	
 	}

@@ -33,7 +33,7 @@ public class grade extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
-		int kor = (grade.html);
+		int kor = 90;
 		int math = 80;
 		int eng = 60;
 		
