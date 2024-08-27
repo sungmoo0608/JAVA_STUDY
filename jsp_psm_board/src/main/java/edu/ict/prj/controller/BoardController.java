@@ -63,33 +63,40 @@ public class BoardController extends HttpServlet {
 
 		System.out.println(uri + ":" + contextPath + ":" + com);
 
-		if(com.equals("/list.do")) {
+		if(com.equals("/home")) {
 			command = new BoardListCommand();
 			command.execute(request, response);
-			viewPage = "list.jsp";
-		}else if(com.equals("/content_view.do")) { //http://localhost:8282/jsp_psm_board/content_view.do?bid=1
+			viewPage = "index.jsp";
+			
+		}else if(com.equals("/add")) { 
 			command = new BoardContentCommand();
 			command.execute(request, response);
-			viewPage = "content_view.jsp";
-		}else if(com.equals("/delete.do")) { //http://localhost:8282/jsp_psm_board/delete.do?bid=3
+			viewPage = "add.jsp";
+			
+		}else if(com.equals("/list")) { 
 			command = new BoardDeleteCommand();
 			command.execute(request, response);
-			viewPage = "list.do";
-		}else if(com.equals("/write_view.do")) { //http://localhost:8282/jsp_psm_board/write_view.do
-			viewPage = "write_view.jsp";
-		}else if(com.equals("/write.do")) { //http://localhost:8282/jsp_psm_board/view.do
+			viewPage = "list.jsp";
+			
+		}else if(com.equals("/result")) {
+			viewPage = "result.jsp";
+			
+		}else if(com.equals("/insert")) { 
 			command = new BoardWriteCommand();
 			command.execute(request, response);
 			viewPage = "list.do";
-		}else if(com.equals("/reply_view.do")) {    //http://localhost:8282/jsp_psm_board/reply_view.do?bid=29
+			
+		}else if(com.equals("/modify")) {  
 			command = new BoardReplyViewCommand();
 			command.execute(request, response);
 			viewPage = "reply_view.jsp";
-		}else if(com.equals("/reply.do")) {    //http://localhost:8282/jsp_psm_board/reply.do
+			
+		}else if(com.equals("/update")) {   
 			command = new BoardReplyCommand();
 			command.execute(request, response);
 			viewPage = "list.do";
-		}else if(com.equals("/modify.do")) {    //http://localhost:8282/jsp_psm_board/modify.do
+			
+		}else if(com.equals("/delete")) {   
 			command = new BoardModifyCommand();
 			command.execute(request, response);
 			viewPage = "list.do";
