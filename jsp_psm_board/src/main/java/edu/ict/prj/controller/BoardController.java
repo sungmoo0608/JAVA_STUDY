@@ -63,44 +63,45 @@ public class BoardController extends HttpServlet {
 
 		System.out.println(uri + ":" + contextPath + ":" + com);
 
-		if(com.equals("/home")) {
-			command = new BoardListCommand();
-			command.execute(request, response);
-			viewPage = "index.jsp";
-			
-		}else if(com.equals("/add")) { 
-			command = new BoardContentCommand();
-			command.execute(request, response);
-			viewPage = "add.jsp";
-			
-		}else if(com.equals("/list")) { 
-			command = new BoardDeleteCommand();
+		if(com.equals("/list.do")) {
+			command = new  BoardListCommand();
 			command.execute(request, response);
 			viewPage = "list.jsp";
+
+		}else if(com.equals("/content_view.do")) { //http://localhost:8282/jsp_hjs_board/content_view.do?bid=1
+			command = new  BoardContentCommand();
+			command.execute(request, response);
+			viewPage = "content_view.jsp";
+		}else if(com.equals("/delete.do")) { //http://localhost:8282/jsp_hjs_board/delete.do?bid=3
+			command = new BoardDeleteCommand();
+			command.execute(request, response);
+			viewPage = "list.do";
 			
-		}else if(com.equals("/result")) {
-			viewPage = "result.jsp";
-			
-		}else if(com.equals("/insert")) { 
+		}else if(com.equals("/write_view.do")) {
+			viewPage = "write_view.jsp";   
+
+		}else if(com.equals("/write.do")) {
 			command = new BoardWriteCommand();
 			command.execute(request, response);
-			viewPage = "list.do";
-			
-		}else if(com.equals("/modify")) {  
-			command = new BoardReplyViewCommand();
-			command.execute(request, response);
-			viewPage = "reply_view.jsp";
-			
-		}else if(com.equals("/update")) {   
+			viewPage = "list.do";   
+
+		}else if(com.equals("/reply_view.do")) {
 			command = new BoardReplyCommand();
 			command.execute(request, response);
-			viewPage = "list.do";
-			
-		}else if(com.equals("/delete")) {   
+			viewPage = "reply_view.jsp";   
+
+		}else if(com.equals("/reply.do")) {
+			command = new BoardReplyViewCommand();
+			command.execute(request, response);
+			viewPage = "list.do";   
+
+		}else if(com.equals("/modify.do")) {
 			command = new BoardModifyCommand();
 			command.execute(request, response);
-			viewPage = "list.do";
+			viewPage = "list.do";   
+			
 		}
+
 
 
 		//서블릿에서 forwarding 하기 위해 

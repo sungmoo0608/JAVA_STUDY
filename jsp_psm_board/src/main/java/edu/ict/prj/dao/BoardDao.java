@@ -77,6 +77,8 @@ public class BoardDao {
 	}
 
 	public BoardVO getBoard(String id) {
+		
+		//upHit(id);
 
 		BoardVO board = null;
 
@@ -328,7 +330,7 @@ public class BoardDao {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		String sql = "update mvc_board set bName = ? , bTitle = ? , bContent = ? where bId=?";   
+		String sql = "update mvc_board set bName = ? , bTitle = ? , bContent = ? where bId = ?";   
 
 		int rn = 0;
 
@@ -357,4 +359,43 @@ public class BoardDao {
 
 		return rn;
 	}
+	
+	
+	public int upHit(String id) { 
+
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		String sql = "update mvc_board set bhit = bhit+1 where bid = ?";   
+
+		int rn = 0 ;
+
+		try{
+
+			connection = dataSource.getConnection();
+			preparedStatement =  connection.prepareStatement(sql);
+
+			preparedStatement.setInt(1, Integer.valueOf(id));
+			//delete update insert
+			rn  = preparedStatement.executeUpdate();         
+
+
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+
+			try {
+				if (preparedStatement != null) preparedStatement.close();
+				if (connection != null)   connection.close();
+			} catch (Exception e2) {
+
+			}         
+		}
+
+
+		return rn;
+	}
+	
+	
 }

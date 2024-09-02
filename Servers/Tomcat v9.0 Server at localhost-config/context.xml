@@ -27,6 +27,19 @@
     <Manager pathname="" />
     -->
     
+	<Resource 
+		auth="Container" 
+		driverClassName="oracle.jdbc.OracleDriver" 
+		maxIdle="10" 
+		maxTotal="20" 
+		maxWaitMillis="-1" 
+		name="jdbc/oraShopping"
+		password="fivecoding"
+		type="javax.sql.DataSource" 
+		url="jdbc:oracle:thin:@192.168.0.6:1521:xe" 
+		username="Tomsboy"
+	/>
+    
     <Resource 
 		auth="Container" 
 		driverClassName="oracle.jdbc.OracleDriver" 
