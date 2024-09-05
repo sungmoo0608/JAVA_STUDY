@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import = "edu.ict.fivecoding.VO.MemberVO" %>
+<%@ page import = "edu.ict.fivecoding.VO.ShoppingMemberVO" %>
 <%
 request.setCharacterEncoding("UTF-8");
 int custno = 0;
@@ -13,7 +13,7 @@ custno = (Integer)request.getAttribute("custno");
 <meta charset="UTF-8">
 <title>main</title>
 <script src="script.js"></script>
-<link rel="stylesheet" href="style.css?ver=1">
+<link rel="stylesheet" href="style_shopping.css?ver=1">
 </head>
 <body>
 <%@ include file="topmenu.jsp" %>

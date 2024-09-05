@@ -3,18 +3,18 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="java.util.List"%>
-<%@ page import="edu.ict.fivecoding.VO.MoneyVO"%>
+<%@ page import="edu.ict.fivecoding.VO.ShoppingMoneyVO"%>
 <%
 request.setCharacterEncoding("UTF-8");
-ArrayList<MoneyVO> list = new ArrayList<MoneyVO>();
-list = (ArrayList<MoneyVO>) request.getAttribute("list");
+ArrayList<ShoppingMoneyVO> list = new ArrayList<ShoppingMoneyVO>();
+list = (ArrayList<ShoppingMoneyVO>) request.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-<link rel="stylesheet" href="style.css?ver=1">
+<link rel="stylesheet" href="style_shopping.css?ver=1">
 </head>
 <body>
 	<%@ include file="topmenu.jsp"%>

@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import edu.ict.fivecoding.DAO.ShoppingDao;
 
 @WebServlet("/")
-public class Controller extends HttpServlet {
+public class ShoppingController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Controller() {
+	public ShoppingController() {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

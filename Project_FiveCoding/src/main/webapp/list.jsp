@@ -1,20 +1,20 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@ page import="edu.ict.fivecoding.VO.MemberVO"%>
+<%@ page import="edu.ict.fivecoding.VO.ShoppingMemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 request.setCharacterEncoding("UTF-8");
-ArrayList<MemberVO> list = new ArrayList<MemberVO>();
-list = (ArrayList<MemberVO>) request.getAttribute("list");
+ArrayList<ShoppingMemberVO> list = new ArrayList<ShoppingMemberVO>();
+list = (ArrayList<ShoppingMemberVO>) request.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-<link rel="stylesheet" href="style.css?ver=1">
+<link rel="stylesheet" href="style_shopping.css?ver=1">
 </head>
 <body>
 	<%@ include file="topmenu.jsp"%>

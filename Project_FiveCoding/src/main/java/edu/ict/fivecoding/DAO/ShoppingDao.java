@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import edu.ict.fivecoding.VO.MemberVO;
-import edu.ict.fivecoding.VO.MoneyVO;
+import edu.ict.fivecoding.VO.ShoppingMemberVO;
+import edu.ict.fivecoding.VO.ShoppingMoneyVO;
 
 public class ShoppingDao {
 
@@ -56,7 +56,7 @@ public class ShoppingDao {
 	}
 
 	public String selectAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<MemberVO> list = new ArrayList<>();
+		ArrayList<ShoppingMemberVO> list = new ArrayList<>();
 
 		try {
 			this.conn = getConnection();
@@ -65,7 +65,7 @@ public class ShoppingDao {
 			this.rs = this.ps.executeQuery();
 
 			while(this.rs.next()) {
-				MemberVO member = new MemberVO();
+				ShoppingMemberVO member = new ShoppingMemberVO();
 				member.setCustno(this.rs.getInt(1));
 				member.setCustname(this.rs.getString(2));
 				member.setPhone(this.rs.getString(3));
@@ -89,7 +89,7 @@ public class ShoppingDao {
 	}
 
 	public String modify(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<MemberVO> list = new ArrayList<>();
+		ArrayList<ShoppingMemberVO> list = new ArrayList<>();
 
 		try {
 			this.conn = getConnection();
@@ -98,7 +98,7 @@ public class ShoppingDao {
 			this.ps = this.conn.prepareStatement(sql);
 			this.rs = this.ps.executeQuery();
 			if (this.rs.next()) {
-				MemberVO member = new MemberVO();
+				ShoppingMemberVO member = new ShoppingMemberVO();
 				member.setCustno(custno);
 				member.setCustname(this.rs.getString(1));
 				member.setPhone(this.rs.getString(2));
@@ -123,7 +123,7 @@ public class ShoppingDao {
 	}
 
 	public String selectResult(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<MoneyVO> list = new ArrayList<>();
+		ArrayList<ShoppingMoneyVO> list = new ArrayList<>();
 
 		try {
 			this.conn = getConnection();
@@ -132,7 +132,7 @@ public class ShoppingDao {
 			this.rs = this.ps.executeQuery();
 
 			while(this.rs.next()) {
-				MoneyVO money = new MoneyVO();
+				ShoppingMoneyVO money = new ShoppingMoneyVO();
 				money.setCustno(this.rs.getInt(1));
 				money.setCustname(this.rs.getString(2));
 				money.setGrade(this.rs.getString(3));

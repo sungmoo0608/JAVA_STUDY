@@ -1,14 +1,14 @@
 package edu.ict.fivecoding.VO;
 
-public class MoneyVO {
+public class ShoppingMoneyVO {
 	int custno;
 	String custname;
 	String grade;
 	int price;
 
-	public MoneyVO() {}
+	public ShoppingMoneyVO() {}
 
-	public MoneyVO(int custno, String custname, String grade, int price) {
+	public ShoppingMoneyVO(int custno, String custname, String grade, int price) {
 		super();
 		this.custno = custno;
 		this.custname = custname;

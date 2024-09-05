@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-<link rel="stylesheet" href="style.css?ver=1">
+<link rel="stylesheet" href="style_shopping.css?ver=1">
 </head>
 <body>
 	<%@ include file="topmenu.jsp"%>

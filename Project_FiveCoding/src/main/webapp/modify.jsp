@@ -1,11 +1,11 @@
-<%@page import="edu.ict.fivecoding.VO.MemberVO"%>
+<%@page import="edu.ict.fivecoding.VO.ShoppingMemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%
 request.setCharacterEncoding("UTF-8");
-ArrayList<MemberVO> list = new ArrayList<MemberVO>();
-list = (ArrayList<MemberVO>) request.getAttribute("list");
+ArrayList<ShoppingMemberVO> list = new ArrayList<ShoppingMemberVO>();
+list = (ArrayList<ShoppingMemberVO>) request.getAttribute("list");
 
 int custno = list.get(0).getCustno();
 String custname = list.get(0).getCustname();
@@ -20,8 +20,8 @@ String city = list.get(0).getCity();
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-<script src="script.js"></script>
-<link rel="stylesheet" href="style.css?ver=1">
+<script src="script_shopping.js"></script>
+<link rel="stylesheet" href="style_shopping.css?ver=1">
 </head>
 <body>
 	<%@ include file="topmenu.jsp"%>

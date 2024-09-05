@@ -1,6 +1,6 @@
 package edu.ict.fivecoding.VO;
 
-public class MemberVO {
+public class ShoppingMemberVO {
 	int custno;
 	String custname;
 	String phone;
@@ -9,9 +9,9 @@ public class MemberVO {
 	String grade;
 	String city;
 
-	public MemberVO() {}
+	public ShoppingMemberVO() {}
 
-	public MemberVO(int custno, String custname, String phone, String address, String joindate, String grade,
+	public ShoppingMemberVO(int custno, String custname, String phone, String address, String joindate, String grade,
 			String city) {
 		super();
 		this.custno = custno;
