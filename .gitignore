@@ -39,6 +39,7 @@ build/
 .metadata
 bin/
 tmp/
+Servers
 *.tmp
 *.bak
 *.swp
