@@ -186,7 +186,7 @@ public class ShoppingDao {
 			e.printStackTrace();
 		}
 
-		return "list.jsp";
+		return "add";
 	}
 
 	public int update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -72,12 +72,13 @@
 						<ul id="navbar"
 							class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
 							<li class="nav-item"><a class="nav-link me-4 active"
-								href="/index.jsp">Home</a>
+								href="index.jsp">Home</a>
 							<li class="nav-item dropdown"><a
 								class="nav-link me-4 dropdown-toggle link-dark"
 								data-bs-toggle="dropdown" href="#" role="button"
-								aria-expanded="false">투표</a>
+								aria-expanded="false">투표 관리</a>
 								<ul class="dropdown-menu">
+									<li><a href="vote/main.do" class="dropdown-item">투표 관리 홈</a></li>
 									<li><a href="vote/member.do" class="dropdown-item">후보조회</a></li>
 									<li><a href="vote/vote.do" class="dropdown-item">투표하기</a></li>
 									<li><a href="vote/voteList.do" class="dropdown-item">투표검수조회</a>
@@ -89,7 +90,7 @@
 							<li class="nav-item dropdown"><a
 								class="nav-link me-4 dropdown-toggle link-dark"
 								data-bs-toggle="dropdown" href="#" role="button"
-								aria-expanded="false">쇼핑몰</a>
+								aria-expanded="false">쇼핑몰 회원 관리</a>
 								<ul class="dropdown-menu">
 									<li><a href="shopping/index.jsp"
 										class="dropdown-item">쇼핑몰 회원 관리 홈</a></li>
@@ -104,12 +105,13 @@
 							<li class="nav-item dropdown"><a
 								class="nav-link me-4 dropdown-toggle link-dark"
 								data-bs-toggle="dropdown" href="#" role="button"
-								aria-expanded="false">골프</a>
+								aria-expanded="false">골프연습장 관리</a>
 								<ul class="dropdown-menu">
-									<li><a href="about.html" class="dropdown-item">후보조회</a></li>
-									<li><a href="blog.html" class="dropdown-item">투표하기</a></li>
-									<li><a href="shop.html" class="dropdown-item">투표검수조회</a></li>
-									<li><a href="cart.html" class="dropdown-item">후보자등수</a></li>
+									<li><a href="golf/Lecture_Johoi_All.jsp" class="dropdown-item">강의현황조회</a></li>
+									<li><a href="golf/Instructor_Johoi_All.jsp" class="dropdown-item">강사진 조회</a></li>
+									<li><a href="golf/Member_Johoi_All.jsp" class="dropdown-item">회원조회</a></li>
+									<li><a href="golf/Member_deungrok.jsp" class="dropdown-item">회원등록</a></li>
+									<li><a href="golf/Instructor_Deungrok.jsp" class="dropdown-item">강사등록</a></li>
 								</ul>
 							</li>
 							<li class="nav-item dropdown"><a
@@ -117,7 +119,7 @@
 								data-bs-toggle="dropdown" href="#" role="button"
 								aria-expanded="false">게임 하기</a>
 								<ul class="dropdown-menu">
-									<li><a href="about.html" class="dropdown-item">로또 게임</a></li>
+									<li><a href="lotto/index.jsp" class="dropdown-item">로또 게임</a></li>
 									<li><a href="rpsgame/index.jsp" class="dropdown-item">가위 바위 보 게임</a></li>
 								</ul>
 							</li>
@@ -145,7 +147,7 @@
 							</div>
 							<div class="cart-concern position-absolute">
 								<div class="cart-button d-flex">
-									<a href="vote/vote.do" class="btn btn-medium btn-black">투표</a>
+									<a href="vote/main.do" class="btn btn-medium btn-black">투표 관리</a>
 								</div>
 							</div>
 						</div>
@@ -158,7 +160,7 @@
 						<div class="product-card position-relative">
 							<div class="image-holder">
 								<img
-									src="${pageContext.request.contextPath}/resource/images/shopping1.jpg"
+									src="${pageContext.request.contextPath}/resource/images/shopping3.jpg"
 									alt="shopping1" class="img-fluid">
 							</div>
 							<div class="cart-concern position-absolute">
@@ -180,7 +182,7 @@
 							</div>
 							<div class="cart-concern position-absolute">
 								<div class="cart-button d-flex">
-									<a href="#" class="btn btn-medium btn-black">골프</a>
+									<a href="golf/Lecture_Johoi_All.jsp" class="btn btn-medium btn-black">골프</a>
 								</div>
 							</div>
 						</div>
@@ -197,7 +199,7 @@
 							</div>
 							<div class="cart-concern position-absolute">
 								<div class="cart-button d-flex">
-									<a href="#" class="btn btn-medium btn-black">로또 게임</a>
+									<a href="lotto/index.jsp" class="btn btn-medium btn-black">로또 게임</a>
 								</div>
 							</div>
 						</div>

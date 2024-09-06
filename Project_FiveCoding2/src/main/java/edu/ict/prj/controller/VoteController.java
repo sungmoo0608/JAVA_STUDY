@@ -52,12 +52,14 @@ public class VoteController extends HttpServlet {
 		String uri = request.getRequestURI(); //project_sjy_vote/list.do
 		String contextPath = request.getContextPath(); //project_sjy_vote
 		String com = uri.substring(contextPath.length());
+		
+		// /project_sjy_vote/vote/member.do:/project_sjy_vote:/vote/member.do
 		System.out.println(uri + ":" + contextPath + ":" + com);
 		
-		if(com.equals("/vote/index.do")) {
+		if(com.equals("/vote/main.do")) {
 			command = new VoteMemberCommand();
 			command.execute(request, response);
-			viewPage = "index.jsp";
+			viewPage = "main.jsp";
 		}else if(com.equals("/vote/member.do")) {
 			command = new VoteMemberCommand();
 			command.execute(request, response);
@@ -67,7 +69,7 @@ public class VoteController extends HttpServlet {
 		}else if(com.equals("/vote/vote_ok.do")) {
 			command = new VoteInsertCommand();
 			command.execute(request, response);
-			viewPage = "index.do";
+			viewPage = "voteList.do";
 		}else if(com.equals("/vote/voteList.do")) {
 			command = new VoteListCommand();
 			command.execute(request, response);

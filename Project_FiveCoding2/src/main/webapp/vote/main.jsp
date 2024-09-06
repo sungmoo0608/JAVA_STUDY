@@ -1,27 +1,38 @@
+<%@page import="edu.ict.prj.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>VoteProgram</title>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<title>VoteProgram</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="VoTogether" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#BE0000" />
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/vote_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- script
     ================================================== -->
-    <script src="resource/js/modernizr.js"></script>
-  </head>
-  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+    <script src="${pageContext.request.contextPath}/resource/js/modernizr.js"></script>
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <svg xmlns="http://www.w3.org/2000/svg" id="chevron-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
@@ -82,48 +93,11 @@
       </symbol>
     </svg>  
 
-    <div class="search-popup">
-        <div class="search-popup-container">
-
-          <form role="search" method="get" class="search-form" action="">
-            <input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value="" name="s" />
-            <button type="submit" class="search-submit"><svg class="search"><use xlink:href="#search"></use></svg></button>
-          </form>
-
-          <h5 class="cat-list-title">Browse Categories</h5>
-          
-          <ul class="cat-list">
-            <li class="cat-list-item">
-              <a href="#" title="Mobile Phones">Mobile Phones</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Smart Watches">Smart Watches</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Headphones">Headphones</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Accessories">Accessories</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Monitors">Monitors</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Speakers">Speakers</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Memory Cards">Memory Cards</a>
-            </li>
-          </ul>
-
-        </div>
-    </div>
-    
     <header id="header" class="site-header header-scrolled position-fixed text-black bg-light">
-      <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
+      <nav id="header-nav" class="navbar navbar-expand-lg px-3">
         <div class="container-fluid">
-        <h1 class="display-6 text-uppercase text-dark">Five Coding</h1>
-          <a class="navbar-project" href="test_index.jsp">
+          <a class="navbar-project h2 p-2" href="main.do">
+          	지역구 의원 선거
           </a>
           <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <svg class="navbar-icon">
@@ -132,97 +106,26 @@
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
             <div class="offcanvas-header px-4 pb-0">
-            <h1 class="display-1 text-uppercase text-dark pb-5">Five Coding</h1>
+            <a class="navbar-project h2 p-2" href="main.do">
+          	지역구 의원 선거
+          </a>
               <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
             </div>
             <div class="offcanvas-body">
               <ul id="navbar" class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link me-4 active" href="#each-project">Home</a>
-                <li class="nav-item dropdown">
-                  <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">투표</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="member.do" class="dropdown-item">후보조회</a>
-                    </li>
-                    <li>
-                      <a href="vote.do" class="dropdown-item">투표하기</a>
-                    </li>
-                    <li>
-                      <a href="voteList.do" class="dropdown-item">투표검수조회</a>
-                    </li>
-                    <li>
-                      <a href="memberRank.do" class="dropdown-item">후보자등수</a>
-                    </li>
-                  </ul>
+                  <a class="nav-link me-4 active" href="${pageContext.request.contextPath}/index.jsp">Main</a>
+                <li class="nav-item">
+                  <a class="nav-link me-4 link-dark" href="member.do" role="button">후보조회</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">쇼핑몰</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="about.html" class="dropdown-item">후보조회</a>
-                    </li>
-                    <li>
-                      <a href="blog.html" class="dropdown-item">투표하기</a>
-                    </li>
-                    <li>
-                      <a href="shop.html" class="dropdown-item">투표검수조회</a>
-                    </li>
-                    <li>
-                      <a href="cart.html" class="dropdown-item">후보자등수</a>
-                    </li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link me-4 link-dark" href="vote.do" role="button" >투표하기</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">골프</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="about.html" class="dropdown-item">후보조회</a>
-                    </li>
-                    <li>
-                      <a href="blog.html" class="dropdown-item">투표하기</a>
-                    </li>
-                    <li>
-                      <a href="shop.html" class="dropdown-item">투표검수조회</a>
-                    </li>
-                    <li>
-                      <a href="cart.html" class="dropdown-item">후보자등수</a>
-                    </li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link me-4 link-dark" href="voteList.do" role="button" >투표검수조회</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">로또</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="about.html" class="dropdown-item">후보조회</a>
-                    </li>
-                    <li>
-                      <a href="blog.html" class="dropdown-item">투표하기</a>
-                    </li>
-                    <li>
-                      <a href="shop.html" class="dropdown-item">투표검수조회</a>
-                    </li>
-                    <li>
-                      <a href="cart.html" class="dropdown-item">후보자등수</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">가위바위보</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href="about.html" class="dropdown-item">후보조회</a>
-                    </li>
-                    <li>
-                      <a href="blog.html" class="dropdown-item">투표하기</a>
-                    </li>
-                    <li>
-                      <a href="shop.html" class="dropdown-item">투표검수조회</a>
-                    </li>
-                    <li>
-                      <a href="cart.html" class="dropdown-item">후보자등수</a>
-                    </li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link me-4 link-dark" href="memberRank.do" role="button" >후보자등수</a>
                 </li>
               </ul>
             </div>
@@ -230,86 +133,40 @@
         </div>
       </nav>
     </header>
-    <section id="each-project" class="product-store position-relative padding-large no-padding-top">
-      <div class="container">
-        <div class="row">
-          <div class="display-header d-flex flex-wrap justify-content-between mt-5 pb-5">
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="d-flex justify-content-between pe-2">
-                <div class="product-card position-relative pe-2">
-                  <div class="image-holder">
-                    <img src="resource/images/vote-1-s.jpg" alt="product-item" class="img-fluid">
-                  </div>
-                  <div class="cart-concern position-absolute">
-                    <div class="cart-button d-flex">
-                      <a href="#" class="btn btn-medium btn-black">투표</a>
+	
+	<section>
+	<div class="masthead">
+			<div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                    	<p class="text-white-75 mb-0">우리 손으로 만드는</p>
+                        <h1 class="text-white-75">대한민국</h1>
+                        <hr class="divider" />
                     </div>
-                  </div>
-                </div>
-                <div class="product-card position-relative pe-2">
-                  <div class="image-holder">
-                    <img src="resource/images/product-item2.jpg" alt="product-item" class="img-fluid">
-                  </div>
-                  <div class="cart-concern position-absolute">
-                    <div class="cart-button d-flex">
-                      <a href="#" class="btn btn-medium btn-black">쇼핑몰</a>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-0">우리의 투표로 만드는 대한민국!</p>
+                        <p class="text-white-75 mb-3">당신의 소중한 한표를 응원합니다!</p>
+                        <a class="btn btn-primary btn-lg" href="vote.do">투표하기</a>
                     </div>
-                  </div>
-                </div>
-                <div class="product-card position-relative pe-2">
-                  <div class="image-holder">
-                    <img src="resource/images/product-item3.jpg" alt="product-item" class="img-fluid">
-                  </div>
-                  <div class="cart-concern position-absolute">
-                    <div class="cart-button d-flex">
-                      <a href="#" class="btn btn-medium btn-black">골프</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-card position-relative pe-2">
-                  <div class="image-holder">
-                    <img src="resource/images/product-item4.jpg" alt="product-item" class="img-fluid">
-                  </div>
-                  <div class="cart-concern position-absolute">
-                    <div class="cart-button d-flex">
-                      <a href="#" class="btn btn-medium btn-black">로또</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-card position-relative pe-2">
-                  <div class="image-holder">
-                    <img src="resource/images/product-item5.jpg" alt="product-item" class="img-fluid">
-                  </div>
-                  <div class="cart-concern position-absolute">
-                    <div class="cart-button d-flex">
-                      <a href="#" class="btn btn-medium btn-black">가위바위보</a>
-                    </div>
-                  </div>
                 </div>
             </div>
-          </div>
-      </div>
-      <div class="swiper-pagination position-absolute text-center"></div>
-      
-    <footer id="footer" class="overflow-hidden">
-      <hr>
-      <div id="footer-bottom">
-      <div class="container">
-        <div class="row d-flex flex-wrap justify-content-between">
-            <div class="copyright" align="center">
-              <p>Copyright 2024. Tomsboy Project Five Coding all rights reserved</p>
-            </div>
-        </div>
-      </div>
-    </div>
-    </footer>
-    
-    <script src="resource/js/jquery-1.11.0.min.js"></script>
+	</div>
+	</section>
+	
+	
+	
+	<footer id="footer">
+		<div class="row">
+			<div class="copyright" align="center">
+				<p>Copyright 2024. Tomsboy Project Five Coding all rights reserved</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="${pageContext.request.contextPath}/resource/js/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="resource/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="resource/js/plugins.js"></script>
-    <script type="text/javascript" src="resource/js/script.js"></script>
-  </body>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resource/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resource/js/plugins.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resource/js/script.js"></script>
+</body>
 </html>
