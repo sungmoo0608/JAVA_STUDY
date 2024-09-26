@@ -107,7 +107,7 @@ public class NewsController extends HttpServlet {
 		List<News> list;
 		try {
 			list = dao.getAll();
-			request.setAttribute("newsList", list);
+			request.setAttribute("newslist", list);
 		} catch (Exception e) {
 			e.printStackTrace();
 			ctx.log("뉴스 목록 생성 과정에서 문제 발생!!");
